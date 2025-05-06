@@ -1,0 +1,39 @@
+{
+    "buses":[
+        {
+            "bus_id":1,
+            "bus_number": "120A",
+            "bus_timings": ["06:00", "08:30", "11:15", "14:00", "17:45"],
+            "bus_source": "Downtown Station",
+            "bus_destination": "Airport Terminal"
+          },
+          {
+            "bus_id":2,
+            "bus_number": "45B",
+            "bus_timings": ["07:10", "09:40", "12:30", "15:20", "18:50"],
+            "bus_source": "Central Market",
+            "bus_destination": "Northside Depot"
+          },
+          {
+            "bus_id":3,
+            "bus_number": "88C",
+            "bus_timings": ["05:45", "08:00", "10:15", "13:30", "19:00"],
+            "bus_source": "University Campus",
+            "bus_destination": "City Center"
+          },
+          {
+            "bus_id":4,
+            "bus_number": "60D",
+            "bus_timings": ["06:30", "09:00", "11:45", "14:15", "20:10"],
+            "bus_source": "East End",
+            "bus_destination": "West Park"
+          },
+          {
+            "bus_id":5,
+            "bus_number": "101E",
+            "bus_timings": ["06:15", "08:45", "12:00", "16:30", "19:45"],
+            "bus_source": "South Hills",
+            "bus_destination": "Tech Park"
+          }
+    ]
+}

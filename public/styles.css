@@ -1,0 +1,267 @@
+body {
+    width: 90%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
+    top: 0;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #C6E7FF;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+nav ul li {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    background-color: #fff;
+}
+
+nav ul li a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.intro {
+    padding: 20px;
+    margin-top: 5px;
+    background-color: #D4F6FF;
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.intro .left img {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.left, .right {
+    width: 100%;
+    height: auto;
+}
+.left p{
+    font-size: 25px;
+}
+
+.about {
+    text-align: left;
+}
+
+.profile {
+    height: 192px;
+    border-radius: 100px;
+}
+
+.left {
+    text-align: center;
+}
+
+.right {
+    text-align: left;
+}
+
+.right p {
+    text-align: justify;
+}
+
+.skills {
+    text-align: left;
+}
+
+.education {
+    padding: 20px;
+    background-color: #C6E7FF;
+    margin-bottom: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}
+
+.education .column {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+
+
+.education .column img {
+    width: 140px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 100px;
+}
+
+.education .column p {
+    text-align: justify;
+}
+.educationright{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top:27px;
+}
+
+.projects {
+    padding: 20px;
+    background-color: #D4F6FF;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+
+.projects .column img {
+    width: 140px;
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.projects .column p {
+    text-align: justify;
+}
+
+.projects-cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+}
+
+.footer {
+    height: 60px;
+    background-color: #C6E7FF;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 10px;
+    align-items: center;
+}
+
+.footer .column img {
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.experience {
+    padding: 20px;
+    background-color: #C6E7FF;
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.experience .left-column, .experience .right-column {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.experience .item {
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.experience .item img {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin: auto;
+}
+
+.experience .item p {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    width: 100%;
+    text-align: justify;
+    /* padding-top: 20px; */
+}
+
+section {
+    border-radius: 10px;
+}
+
+.blogs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+
+
+
+@media (max-width: 1060px) {
+    .educationright{
+        display: block
+    }
+    .projects-cards-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    
+    }
+    .experience {
+        
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .blogs{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .intro, .education, .projects, .experience {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        display: block;
+    }
+    .projects-cards-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    
+    }
+    .blogs{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .experience .item {
+        grid-template-columns: 1fr;
+    }
+}
