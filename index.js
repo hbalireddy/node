@@ -39,20 +39,27 @@ http.createServer(async (req, res) => {
             console.log("Database connection is closed");
         }
     }
-    else if(req.url === "/"){
-        //Reads given file from public folder
-        fs.readFile(path.join(__dirname,"public","index.html"),(err,content)=>{
-            if(err){
-                console.log("Error in opening/reading file",err);
-            }
-            else{
-                res.writeHead(200,{"content-type":"text/html"});
-                res.end(content);
+    else {
+        console.log(req.url);
+        let contentType;
+        const filePath = path.join(__dirname, "public", req.url === "/" ? "index.html" : req.url.slice(1));
+        if (filePath.endsWith(".png")) contentType = "image/png";
+        else if (filePath.endsWith(".jpeg") || filePath.endsWith(".jpg")) contentType = "image/jpeg";
+        else contentType = "text/html";
+        fs.readFile(filePath, (err, content) => {
+            if (err) {
+                if (err.code === "ENOENT") {
+                    res.writeHead(404, { "content-type": "text/html" });
+                    res.end("<h1>404 Page Not Found!</h1>");
+                } else {
+                    res.writeHead(500, { "content-type": "text/plain" });
+                    res.end("Internal Server error");
+                }
+            } else {
+                res.writeHead(200, { "content-type": contentType });
+                res.end(content, "utf8");
             }
         });
     }
-    else{
-        res.writeHead(404,{"content-type":"text/html"});
-        res.end("<h1>404 Page Not Found!</h1>");
-    }
+    
 }).listen(PORT, () => console.log(`Server is running on ${PORT}`));
