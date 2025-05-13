@@ -5,15 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HARSHAVARDHAN PORTFOLIO</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
   <!-- <link rel="stylesheet" href="styles.css" /> -->
 </head>
 
 <body>
   <div class="container">
     <header>
+      <button id="menu"><i class="fas fa-bars"></i></button>
       <nav>
         <ul>
-          <nav>
+          <nav id="navbar">
             <ul>
               <li><a href="#about">ABOUT</a></li>
               <li><a href="#skills">SKILLS</a></li>
@@ -237,6 +239,7 @@ Refined SQL queries in Azure SQL Database, improving data accuracy and decision-
   </div>
 
   <style>
+
     body {
     width: 90%;
     margin: 0 auto;
@@ -248,6 +251,12 @@ header {
     width: 100%;
     text-align: center;
     top: 0;
+}
+
+#menu{
+
+    display:none;
+
 }
 
 nav ul {
@@ -485,7 +494,39 @@ section {
     .intro, .education, .projects, .experience {
         grid-template-columns: 1fr;
     }
+#menu{
 
+        display: block;
+
+        border:transparent;
+
+        background:none;
+
+        text-align: left;
+
+        margin-top:20px;
+
+        cursor: pointer;
+
+    }
+
+    #navbar {
+
+        display: none;
+
+        padding: 2em;
+
+        margin: 0;
+
+    }
+
+    #navbar ul {
+
+        display: grid;
+
+        grid-template-columns: repeat(1, minmax(100px, 1fr));
+
+    }
     nav ul {
         display: block;
     }
@@ -505,6 +546,27 @@ section {
     }
 }
   </style>
+  <script>
+
+    document.getElementById("menu").addEventListener('click', function () {
+
+      var navbar = document.getElementById("navbar");
+
+      if (navbar.style.display === 'block') {
+
+        navbar.style.display = 'none';
+
+      } else {
+
+        navbar.style.display = 'block';
+
+        console.log("Menu button clicked");
+
+      }
+
+    })
+
+  </script>
 </body>
 
 </html>
